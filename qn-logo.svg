@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="75%">
+      <stop offset="0%" stop-color="#2B1149"/>
+      <stop offset="52%" stop-color="#150826"/>
+      <stop offset="100%" stop-color="#07030E"/>
+    </radialGradient>
+    <linearGradient id="neon" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#C93BC0"/>
+      <stop offset="34%" stop-color="#7B3FF2"/>
+      <stop offset="68%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#0BD6EE"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0BD6EE"/>
+      <stop offset="52%" stop-color="#5B8CF7"/>
+      <stop offset="100%" stop-color="#9B4FF5"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity=".20"/>
+      <stop offset="42%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="gBig" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="30"/></filter>
+    <filter id="gMid" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="13"/></filter>
+    <filter id="gSm"  x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="4"/></filter>
+
+    <g id="qn">
+      <path fill-rule="evenodd" d="M290,370 L460,370 L500,410 L500,580 L460,620 L290,620 L250,580 L250,410 Z
+                                   M316,438 L434,438 L440,446 L440,544 L434,552 L316,552 L310,544 L310,446 Z"/>
+      <path d="M436,514 L541,619 L499,661 L394,556 Z"/>
+      <path d="M540,370 L600,370 L730,540 L730,370 L790,370 L790,620 L730,620 L600,450 L600,620 L540,620 Z"/>
+    </g>
+
+    <path id="hex" d="M942,512 L727,140 L297,140 L82,512 L297,884 L727,884 Z"/>
+    <clipPath id="frame"><rect x="0" y="0" width="1024" height="1024"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <!-- ground -->
+    <rect width="1024" height="1024" fill="#07030E"/>
+    <rect width="1024" height="1024" fill="url(#bg)"/>
+
+    <!-- circuit grid -->
+    <g stroke="#22E0F0" stroke-width="1" opacity=".07">
+      <path d="M0,128 H1024 M0,256 H1024 M0,384 H1024 M0,512 H1024 M0,640 H1024 M0,768 H1024 M0,896 H1024"/>
+      <path d="M128,0 V1024 M256,0 V1024 M384,0 V1024 M512,0 V1024 M640,0 V1024 M768,0 V1024 M896,0 V1024"/>
+    </g>
+    <g stroke="#4B6EF5" stroke-width="2" opacity=".16">
+      <path d="M0,196 H300 M724,196 H1024 M0,828 H300 M724,828 H1024"/>
+    </g>
+
+    <!-- hex halo -->
+    <use href="#hex" fill="none" stroke="#A855F7" stroke-width="46" opacity=".38" filter="url(#gBig)"/>
+    <use href="#hex" fill="none" stroke="#6C46E8" stroke-width="20" opacity=".55" filter="url(#gMid)"/>
+
+    <!-- hex plate + ring -->
+    <use href="#hex" fill="#0E0520" opacity=".82"/>
+    <use href="#hex" fill="none" stroke="url(#ring)" stroke-width="17" stroke-linejoin="miter"/>
+    <use href="#hex" fill="none" stroke="#EBD8FF" stroke-width="3" opacity=".8"/>
+
+    <!-- inner hairline hex -->
+    <g transform="translate(512,512) scale(.885) translate(-512,-512)">
+      <use href="#hex" fill="none" stroke="#22E0F0" stroke-width="3" opacity=".42"/>
+    </g>
+
+    <!-- corner ticks -->
+    <g stroke="#22E0F0" stroke-width="7" opacity=".85" stroke-linecap="square">
+      <path d="M727,140 L727,96 M297,140 L297,96 M727,884 L727,928 M297,884 L297,928"/>
+    </g>
+
+    <!-- monogram -->
+    <g transform="translate(512,512) scale(1.06) translate(-512,-512) translate(-6,2)">
+      <use href="#qn" fill="#7B3FF2" opacity=".85" filter="url(#gBig)"/>
+      <use href="#qn" fill="#A855F7" opacity=".9" filter="url(#gMid)"/>
+      <g transform="translate(-9,5)"><use href="#qn" fill="#22E0F0" opacity=".55"/></g>
+      <g transform="translate(9,-5)"><use href="#qn" fill="#4B6EF5" opacity=".55"/></g>
+      <use href="#qn" fill="url(#neon)"/>
+      <use href="#qn" fill="url(#sheen)"/>
+      <use href="#qn" fill="none" stroke="#FFFFFF" stroke-width="2.5" opacity=".34" filter="url(#gSm)"/>
+    </g>
+
+    <!-- glitch bands -->
+    <g opacity=".5">
+      <rect x="220" y="430" width="590" height="7" fill="#22E0F0" opacity=".45"/>
+      <rect x="300" y="596" width="430" height="5" fill="#FFFFFF" opacity=".3"/>
+    </g>
+
+    <!-- vignette -->
+    <rect width="1024" height="1024" fill="none"/>
+  </g>
+</svg>

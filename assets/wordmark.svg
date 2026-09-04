@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200" width="900" height="200" role="img" aria-label="QUICKKNASTYY - systems builder, automation addict, workflow architect">
+  <defs>
+    <linearGradient id="neon" gradientUnits="userSpaceOnUse" x1="34" y1="122" x2="724" y2="44">
+      <stop offset="0%" stop-color="#C93BC0"/>
+      <stop offset="30%" stop-color="#8B3FF5"/>
+      <stop offset="66%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#0BD6EE"/>
+    </linearGradient>
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#9B4FF5"/>
+      <stop offset="55%" stop-color="#4B6EF5"/>
+      <stop offset="100%" stop-color="#0BD6EE" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-25%" y="-60%" width="150%" height="220%"><feGaussianBlur stdDeviation="14"/></filter>
+
+    <mask id="word" maskUnits="userSpaceOnUse" x="0" y="0" width="900" height="200">
+      <rect width="900" height="200" fill="#000"/>
+      <text class="wm" x="32" y="112" font-size="74" fill="#fff">QUICKKNASTYY</text>
+    </mask>
+
+    <g id="src">
+      <text y="11">import { ThinkForge } from "@qn/thinkforge"; import { EchoForge } from "@qn/echoforge";</text>
+      <text y="24">import { LeadForge } from "@qn/leadforge"; import { JobBot } from "@qn/jobbot"; // ok</text>
+      <text y="37">import { DSH } from "@qn/dsh"; import { chromium } from "playwright-core"; // exec</text>
+      <text y="50">const stack = ["typescript","electron","playwright","node","python","react"] as const;</text>
+      <text y="63">export async function forge(idea: Idea, stack: Stack): Promise&lt;Build&gt; { // control</text>
+      <text y="76">  const plan = await ThinkForge.route(idea, { verify: true, agents: 4, retry: 2 });</text>
+      <text y="89">  const runs = await Promise.all(plan.steps.map((s) =&gt; DSH.exec(s, { env: "wsl2" })));</text>
+      <text y="102">  if (runs.some((r) =&gt; !r.ok)) return recorder.flush({ status: "failed", runs });</text>
+      <text y="115">  return build.deploy({ target: "desktop", channel: "stable", vibes: true }); } // go</text>
+      <text y="128">export const listen = (audio: Stream) =&gt; EchoForge.translate(audio, { mode: "live" });</text>
+      <text y="141">export const catchLead = (lead: Inbound) =&gt; LeadForge.route(lead, { crm: "hubspot" });</text>
+      <text y="154">export async function apply(p: Posting) { await JobBot.fill(p, profile, recorder); }</text>
+      <text y="167">const recorder = new FlightRecorder({ sink: "./runs", redact: true, level: "trace" });</text>
+      <text y="180">while (queue.length) { const job = queue.shift(); await forge(job, stack); } // loop</text>
+      <text y="193">// quickknastyy - systems builder - automation addict - workflow architect - shipping</text>
+    </g>
+  </defs>
+
+  <style>
+    .wm{font-family:"Arial Black","Segoe UI Black",Impact,system-ui,sans-serif;font-weight:900;letter-spacing:1.5px}
+    .mn{font-family:ui-monospace,"SFMono-Regular","Consolas","Liberation Mono",monospace}
+    .scroll{animation:run 15s linear infinite}
+    @keyframes run{from{transform:translateY(0)}to{transform:translateY(-195px)}}
+    .sub{animation:fade 15s ease-in-out infinite}
+    @keyframes fade{0%,100%{opacity:.72}50%{opacity:1}}
+  </style>
+
+  <rect width="900" height="200" fill="#0B0416"/>
+  <g stroke="#5B8CF7" stroke-width="1" opacity=".08">
+    <path d="M0,40 H900 M0,80 H900 M0,120 H900 M0,160 H900"/>
+    <path d="M100,0 V200 M200,0 V200 M300,0 V200 M400,0 V200 M500,0 V200 M600,0 V200 M700,0 V200 M800,0 V200"/>
+  </g>
+
+  <!-- halo cast by the letters -->
+  <text class="wm" x="32" y="112" font-size="74" fill="#7B3FF2" opacity=".62" filter="url(#glow)">QUICKKNASTYY</text>
+
+  <!-- bright letters, dense code running through them -->
+  <g mask="url(#word)">
+    <rect width="900" height="200" fill="url(#neon)"/>
+    <g class="scroll mn" font-size="12" fill="#12031F" opacity=".62">
+      <use href="#src" x="6"/><use href="#src" x="6" y="195"/><use href="#src" x="6" y="390"/>
+      <use href="#src" x="614"/><use href="#src" x="614" y="195"/><use href="#src" x="614" y="390"/>
+    </g>
+  </g>
+
+  <!-- keeps the letterforms readable wherever code darkens them -->
+  <text class="wm" x="32" y="112" font-size="74" fill="none" stroke="#DCE6FF" stroke-width="1.2" opacity=".75">QUICKKNASTYY</text>
+
+  <rect x="32" y="132" width="620" height="2" fill="url(#rule)"/>
+  <text class="mn sub" x="32" y="160" font-size="13.5" fill="#BDB4F7" letter-spacing="2.2">SYSTEMS BUILDER · AUTOMATION ADDICT · WORKFLOW ARCHITECT</text>
+</svg>
