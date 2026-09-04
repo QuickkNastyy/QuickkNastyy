@@ -116,7 +116,8 @@ try {
         $token = $null
     }
 
-    $changed = @(Get-GitValue @('status', '--porcelain=v1', '--untracked-files=all') -split "`r?`n" | Where-Object { $_ })
+    $statusAfter = Get-GitValue @('status', '--porcelain=v1', '--untracked-files=all')
+    $changed = @($statusAfter -split "`r?`n" | Where-Object { $_ })
     if ($changed.Count -eq 0) {
         Write-Log 'Stats are unchanged; nothing to commit.'
         exit 0
