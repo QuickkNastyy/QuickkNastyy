@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="./assets/avatar-live.svg" alt="" width="132" />
-
 <img src="./assets/wordmark.svg" alt="QuickkNastyy — systems builder, automation addict, workflow architect" width="100%" />
 
 <br />
