@@ -49,26 +49,19 @@
 
 ---
 
-<!-- THE NUMBERS - switched off until the contribution graph finishes
-     reindexing and a few more repos are public. Delete this line and
-     the closing marker further down to turn the cards on. -->
-<!--
-
 ## `~/` THE NUMBERS
 
 <div align="center">
 
-<a href="https://github.com/QuickkNastyy?tab=repositories"><img height="165" alt="GitHub stats" src="https://github-readme-stats.vercel.app/api?username=QuickkNastyy&show_icons=true&hide_border=true&count_private=true&include_all_commits=true&bg_color=0B0416&title_color=8B3FF5&icon_color=0BD6EE&text_color=BDB4F7" /></a>
-<a href="https://github.com/QuickkNastyy?tab=repositories"><img height="165" alt="Top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=QuickkNastyy&layout=compact&hide_border=true&langs_count=8&bg_color=0B0416&title_color=8B3FF5&text_color=BDB4F7" /></a>
+<a href="https://github.com/QuickkNastyy?tab=repositories"><img src="./assets/stats.svg" alt="101 contributions, 97 commits, 11 repositories, 7 stars earned" width="100%" /></a>
 
 <br />
 
-<a href="https://github.com/QuickkNastyy?tab=repositories"><img alt="Streak" src="https://streak-stats.demolab.com?user=QuickkNastyy&hide_border=true&background=0B0416&stroke=2A1247&ring=8B3FF5&fire=0BD6EE&currStreakLabel=8B3FF5&sideLabels=BDB4F7&dates=6F5A94&currStreakNum=F2E9FF&sideNums=F2E9FF" /></a>
+<a href="https://github.com/QuickkNastyy?tab=repositories"><img alt="Contribution streak" src="https://streak-stats.demolab.com?user=QuickkNastyy&hide_border=true&background=0B0416&stroke=282047&ring=8B3FF5&fire=0BD6EE&currStreakLabel=0BD6EE&sideLabels=BDB4F7&dates=6F6A94&currStreakNum=F2EFFF&sideNums=F2EFFF" /></a>
 
 </div>
 
 ---
--->
 
 <div align="center">
 <sub><code>// probably vibe coding some shit</code></sub>

@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 180" width="900" height="180" role="img" aria-label="101 contributions, 97 commits, 11 repositories, 7 stars earned in the last 12 months">
+  <defs>
+    <linearGradient id="srail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#9B4FF5"/>
+      <stop offset="50%" stop-color="#4B6EF5"/>
+      <stop offset="100%" stop-color="#0BD6EE"/>
+    </linearGradient>
+    <linearGradient id="snum" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#7B3FF2"/>
+      <stop offset="100%" stop-color="#0BD6EE"/>
+    </linearGradient>
+    <filter id="ssoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+    <clipPath id="spanel"><rect x="1" y="1" width="898" height="178" rx="8"/></clipPath>
+  </defs>
+
+  <style>
+    .smn{font-family:ui-monospace,"SFMono-Regular","Consolas","Liberation Mono",monospace}
+    .tile{opacity:0;animation:tin 8s ease infinite}
+    @keyframes tin{
+      0%,5%   {opacity:0; transform:translateY(10px)}
+      14%,90% {opacity:1; transform:translateY(0)}
+      100%    {opacity:0; transform:translateY(10px)}
+    }
+    .shead{opacity:0;animation:shin 8s ease infinite}
+    @keyframes shin{0%{opacity:0}5%,92%{opacity:1}100%{opacity:0}}
+    .sdot{animation:sdp 2.2s ease-in-out infinite}
+    @keyframes sdp{0%,100%{opacity:1}50%{opacity:.25}}
+    .glow{animation:sg 8s ease-in-out infinite}
+    @keyframes sg{0%,100%{opacity:.18}50%{opacity:.42}}
+  </style>
+
+  <g clip-path="url(#spanel)">
+    <rect width="900" height="180" fill="#0B0416"/>
+    <g stroke="#5B8CF7" stroke-width="1" opacity=".06">
+      <path d="M0,45 H900 M0,90 H900 M0,135 H900"/>
+      <path d="M150,0 V180 M300,0 V180 M450,0 V180 M600,0 V180 M750,0 V180"/>
+    </g>
+
+    <rect x="0" y="0" width="900" height="3" fill="url(#srail)"/>
+
+    <g class="shead">
+      <circle class="sdot" cx="34" cy="36" r="4" fill="#0BD6EE"/>
+      <text class="smn" x="48" y="40" font-size="12" fill="#0BD6EE" letter-spacing="2.8" font-weight="600">THE NUMBERS</text>
+      <text class="smn" x="866" y="40" font-size="10.5" fill="#6F6A94" letter-spacing="1.4" text-anchor="end">LAST 12 MONTHS</text>
+    </g>
+
+    <g stroke="#282047" stroke-width="1">
+      <path d="M232,66 V150 M457,66 V150 M682,66 V150"/>
+    </g>
+
+    <g class="smn" text-anchor="middle">
+      <g class="tile" style="animation-delay:0s">
+        <ellipse class="glow" cx="120" cy="106" rx="52" ry="20" fill="#7B3FF2" filter="url(#ssoft)"/>
+        <text x="120" y="120" font-size="44" font-weight="700" fill="url(#snum)">101</text>
+        <text x="120" y="144" font-size="10.5" fill="#8078A8" letter-spacing="2">CONTRIBUTIONS</text>
+      </g>
+      <g class="tile" style="animation-delay:.18s">
+        <ellipse class="glow" cx="345" cy="106" rx="48" ry="20" fill="#4B6EF5" filter="url(#ssoft)" style="animation-delay:.18s"/>
+        <text x="345" y="120" font-size="44" font-weight="700" fill="url(#snum)">97</text>
+        <text x="345" y="144" font-size="10.5" fill="#8078A8" letter-spacing="2">COMMITS</text>
+      </g>
+      <g class="tile" style="animation-delay:.36s">
+        <ellipse class="glow" cx="570" cy="106" rx="44" ry="20" fill="#0BD6EE" filter="url(#ssoft)" style="animation-delay:.36s"/>
+        <text x="570" y="120" font-size="44" font-weight="700" fill="url(#snum)">11</text>
+        <text x="570" y="144" font-size="10.5" fill="#8078A8" letter-spacing="2">REPOSITORIES</text>
+      </g>
+      <g class="tile" style="animation-delay:.54s">
+        <ellipse class="glow" cx="793" cy="106" rx="44" ry="20" fill="#9B4FF5" filter="url(#ssoft)" style="animation-delay:.54s"/>
+        <text x="793" y="120" font-size="44" font-weight="700" fill="url(#snum)">7</text>
+        <text x="793" y="144" font-size="10.5" fill="#8078A8" letter-spacing="2">STARS EARNED</text>
+      </g>
+    </g>
+
+    <rect x="0.5" y="0.5" width="899" height="179" rx="8" fill="none" stroke="#282047"/>
+  </g>
+</svg>
