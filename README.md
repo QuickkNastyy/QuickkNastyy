@@ -58,12 +58,12 @@
 
 <div align="center">
 
-<img height="165" alt="GitHub stats" src="https://github-readme-stats.vercel.app/api?username=QuickkNastyy&show_icons=true&hide_border=true&count_private=true&include_all_commits=true&bg_color=0B0416&title_color=8B3FF5&icon_color=0BD6EE&text_color=BDB4F7" />
-<img height="165" alt="Top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=QuickkNastyy&layout=compact&hide_border=true&langs_count=8&bg_color=0B0416&title_color=8B3FF5&text_color=BDB4F7" />
+<a href="https://github.com/QuickkNastyy?tab=repositories"><img height="165" alt="GitHub stats" src="https://github-readme-stats.vercel.app/api?username=QuickkNastyy&show_icons=true&hide_border=true&count_private=true&include_all_commits=true&bg_color=0B0416&title_color=8B3FF5&icon_color=0BD6EE&text_color=BDB4F7" /></a>
+<a href="https://github.com/QuickkNastyy?tab=repositories"><img height="165" alt="Top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=QuickkNastyy&layout=compact&hide_border=true&langs_count=8&bg_color=0B0416&title_color=8B3FF5&text_color=BDB4F7" /></a>
 
 <br />
 
-<img alt="Streak" src="https://streak-stats.demolab.com?user=QuickkNastyy&hide_border=true&background=0B0416&stroke=2A1247&ring=8B3FF5&fire=0BD6EE&currStreakLabel=8B3FF5&sideLabels=BDB4F7&dates=6F5A94&currStreakNum=F2E9FF&sideNums=F2E9FF" />
+<a href="https://github.com/QuickkNastyy?tab=repositories"><img alt="Streak" src="https://streak-stats.demolab.com?user=QuickkNastyy&hide_border=true&background=0B0416&stroke=2A1247&ring=8B3FF5&fire=0BD6EE&currStreakLabel=8B3FF5&sideLabels=BDB4F7&dates=6F5A94&currStreakNum=F2E9FF&sideNums=F2E9FF" /></a>
 
 </div>
 
