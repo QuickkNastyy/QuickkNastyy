@@ -95,8 +95,8 @@ const repositories = repos.length;
 const privateRepositories = repos.filter((repo) => repo.private).length;
 const stars = repos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
 
-const stats = { contributions, commits, repositories, stars };
-console.log('fetched:', stats);
+const fetchedStats = { contributions, commits, repositories, stars };
+console.log('fetched:', fetchedStats);
 console.log('private visibility:', {
   privateRepositories,
   privateCommitContributions,
@@ -104,7 +104,7 @@ console.log('private visibility:', {
   hasRestrictedContributions: cc.hasAnyRestrictedContributions,
 });
 
-for (const [key, value] of Object.entries(stats)) {
+for (const [key, value] of Object.entries(fetchedStats)) {
   if (!Number.isFinite(value)) throw new Error(`bad value for ${key}: ${value}`);
 }
 if (contributions === 0 && commits === 0) {
@@ -119,6 +119,29 @@ const fmt = (n) => n.toLocaleString('en-US');
 let svg = readFileSync(SVG, 'utf8');
 const before = svg;
 
+// A successful refresh commit is authored to QuickkNastyy and therefore becomes
+// one additional contribution and commit on the profile. When the card needs a
+// refresh, include that imminent commit in the target values so the card settles
+// after the push instead of being permanently one commit behind itself.
+const readCurrentStat = (key) => {
+  const re = new RegExp(`<text data-stat="${key}"[^>]*>([^<]*)</text>`);
+  const match = svg.match(re);
+  if (!match) throw new Error(`marker data-stat="${key}" not found in ${SVG}`);
+  const value = Number(match[1].replace(/,/g, ''));
+  if (!Number.isFinite(value)) throw new Error(`invalid existing value for ${key}: ${match[1]}`);
+  return value;
+};
+const currentStats = Object.fromEntries(
+  Object.keys(fetchedStats).map((key) => [key, readCurrentStat(key)]),
+);
+const fetchedMatchesCard = Object.entries(fetchedStats)
+  .every(([key, value]) => currentStats[key] === value);
+const anticipateCommit = process.env.STATS_ANTICIPATE_COMMIT === '1' && !fetchedMatchesCard;
+const stats = anticipateCommit
+  ? { ...fetchedStats, contributions: contributions + 1, commits: commits + 1 }
+  : fetchedStats;
+if (anticipateCommit) console.log('target includes expected refresh commit:', stats);
+
 for (const [key, value] of Object.entries(stats)) {
   const re = new RegExp(`(<text data-stat="${key}"[^>]*>)([^<]*)(</text>)`);
   if (!re.test(svg)) throw new Error(`marker data-stat="${key}" not found in ${SVG}`);
@@ -127,7 +150,7 @@ for (const [key, value] of Object.entries(stats)) {
 
 svg = svg.replace(
   /(data-aria="1" aria-label=")[^"]*(")/,
-  `$1${fmt(contributions)} contributions, ${fmt(commits)} commits, ${fmt(repositories)} repositories, ${fmt(stars)} stars earned in the last 12 months$2`,
+  `$1${fmt(stats.contributions)} contributions, ${fmt(stats.commits)} commits, ${fmt(stats.repositories)} repositories, ${fmt(stats.stars)} stars earned in the last 12 months$2`,
 );
 
 if (svg === before) {

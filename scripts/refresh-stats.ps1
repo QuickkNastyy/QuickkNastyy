@@ -36,8 +36,18 @@ function Invoke-External {
         [switch]$LogOutput
     )
 
-    $output = & $FilePath @Arguments 2>&1
-    $exitCode = $LASTEXITCODE
+    # Native tools such as git write normal progress to stderr even on success.
+    # Keep that output for logs, but do not let ErrorActionPreference='Stop'
+    # turn a successful native command into a PowerShell exception.
+    $previousErrorActionPreference = $ErrorActionPreference
+    try {
+        $ErrorActionPreference = 'Continue'
+        $output = & $FilePath @Arguments 2>&1
+        $exitCode = $LASTEXITCODE
+    }
+    finally {
+        $ErrorActionPreference = $previousErrorActionPreference
+    }
     if ($LogOutput) {
         foreach ($line in @($output)) {
             if ($null -ne $line -and "$line".Length -gt 0) { Write-Log "$line" }
@@ -59,6 +69,7 @@ function Get-GitValue {
 $lock = $null
 $token = $null
 $previousStatsToken = $env:STATS_TOKEN
+$previousStatsAnticipateCommit = $env:STATS_ANTICIPATE_COMMIT
 try {
     # Prevent a manual run and Scheduled Task run from racing each other.
     $createdNew = $false
@@ -106,6 +117,7 @@ try {
     }
 
     $env:STATS_TOKEN = $token
+    $env:STATS_ANTICIPATE_COMMIT = '1'
     Push-Location $RepoRoot
     try {
         Invoke-External -FilePath $nodeCommand.Source -Arguments @('scripts/refresh-stats.mjs') -LogOutput | Out-Null
@@ -113,6 +125,7 @@ try {
     finally {
         Pop-Location
         $env:STATS_TOKEN = $previousStatsToken
+        $env:STATS_ANTICIPATE_COMMIT = $previousStatsAnticipateCommit
         $token = $null
     }
 
@@ -147,6 +160,7 @@ catch {
 }
 finally {
     $env:STATS_TOKEN = $previousStatsToken
+    $env:STATS_ANTICIPATE_COMMIT = $previousStatsAnticipateCommit
     $token = $null
     if ($null -ne $lock) {
         try { $lock.ReleaseMutex() } catch { }
