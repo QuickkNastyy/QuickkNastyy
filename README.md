@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="./assets/wordmark.svg" alt="QuickkNastyy — systems builder, automation addict, workflow architect" width="100%" />
+<a href="https://github.com/QuickkNastyy"><img src="./assets/wordmark.svg" alt="QuickkNastyy — systems builder, automation addict, workflow architect" width="100%" /></a>
 
 <br />
 
-<img src="./assets/whoami.svg" alt="whoami --verbose" width="100%" />
+<a href="https://github.com/QuickkNastyy"><img src="./assets/whoami.svg" alt="whoami --verbose" width="100%" /></a>
 
 <br /><br />
 
@@ -32,7 +32,7 @@
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=ts,js,python,nodejs,electron,react,cs,tailwind,postgres,docker,git,linux&theme=dark&perline=12" alt="TypeScript, JavaScript, Python, Node, Electron, React, C#, Tailwind, Postgres, Docker, Git, Linux" />
+<a href="https://github.com/QuickkNastyy?tab=repositories"><img src="https://skillicons.dev/icons?i=ts,js,python,nodejs,electron,react,cs,tailwind,postgres,docker,git,linux&theme=dark&perline=12" alt="TypeScript, JavaScript, Python, Node, Electron, React, C#, Tailwind, Postgres, Docker, Git, Linux" /></a>
 
 </div>
 
@@ -43,7 +43,7 @@
 
 <div align="center">
 
-<img src="./assets/rules.svg" alt="Rules of the Forge: if it repeats, automate it. If it fails, record it. If it ships, test it. If it hurts twice, build a tool." width="100%" />
+<a href="https://github.com/QuickkNastyy?tab=repositories"><img src="./assets/rules.svg" alt="Rules of the Forge: if it repeats, automate it. If it fails, record it. If it ships, test it. If it hurts twice, build a tool." width="100%" /></a>
 
 </div>
 
