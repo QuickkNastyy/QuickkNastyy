@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 250" width="900" height="250" role="img" aria-label="Rules of the Forge: if it repeats automate it; if it fails record it; if it ships test it; if it hurts twice build a tool">
+  <defs>
+    <linearGradient id="rail" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9B4FF5"/>
+      <stop offset="50%" stop-color="#4B6EF5"/>
+      <stop offset="100%" stop-color="#0BD6EE"/>
+    </linearGradient>
+    <linearGradient id="sweepFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0BD6EE" stop-opacity="0"/>
+      <stop offset="18%" stop-color="#0BD6EE" stop-opacity=".55"/>
+      <stop offset="70%" stop-color="#9B4FF5" stop-opacity=".25"/>
+      <stop offset="100%" stop-color="#9B4FF5" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5"/></filter>
+    <clipPath id="panel"><rect x="1" y="1" width="898" height="248" rx="8"/></clipPath>
+
+    <g id="arrow">
+      <path d="M0,0 H16" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <path d="M11,-5 L17,0 L11,5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+  </defs>
+
+  <style>
+    .mn{font-family:ui-monospace,"SFMono-Regular","Consolas","Liberation Mono",monospace}
+    .row{opacity:0;animation:rin 9s ease infinite}
+    @keyframes rin{
+      0%,6%   {opacity:0; transform:translateX(-14px)}
+      15%,88% {opacity:1; transform:translateX(0)}
+      100%    {opacity:0; transform:translateX(-14px)}
+    }
+    .head{opacity:0;animation:hin 9s ease infinite}
+    @keyframes hin{0%{opacity:0}6%,92%{opacity:1}100%{opacity:0}}
+    .sweep{opacity:0;animation:sw 9s cubic-bezier(.4,0,.3,1) infinite}
+    @keyframes sw{
+      0%,14%  {transform:translateY(64px); opacity:0}
+      22%     {opacity:.9}
+      58%     {transform:translateY(224px); opacity:0}
+      100%    {transform:translateY(224px); opacity:0}
+    }
+    .spark{animation:sp 9s ease-in-out infinite}
+    @keyframes sp{0%,100%{opacity:.25}50%{opacity:.9}}
+    .arw{stroke:#0BD6EE;animation:aw 9s ease-in-out infinite}
+    @keyframes aw{0%,100%{opacity:.55}50%{opacity:1}}
+  </style>
+
+  <g clip-path="url(#panel)">
+    <rect width="900" height="250" fill="#0B0416"/>
+    <g stroke="#5B8CF7" stroke-width="1" opacity=".06">
+      <path d="M0,50 H900 M0,100 H900 M0,150 H900 M0,200 H900"/>
+      <path d="M150,0 V250 M300,0 V250 M450,0 V250 M600,0 V250 M750,0 V250"/>
+    </g>
+
+    <!-- ember glow bottom-right, like heat off an anvil -->
+    <circle cx="820" cy="235" r="70" fill="#9B4FF5" opacity=".16" filter="url(#soft)"/>
+    <circle class="spark" cx="866" cy="212" r="3" fill="#0BD6EE"/>
+    <circle class="spark" cx="842" cy="228" r="2" fill="#E0399B" style="animation-delay:1.2s"/>
+    <circle class="spark" cx="878" cy="188" r="2" fill="#9B4FF5" style="animation-delay:2.4s"/>
+
+    <rect x="26" y="30" width="3" height="192" rx="1.5" fill="url(#rail)"/>
+
+    <g class="head">
+      <text class="mn" x="50" y="48" font-size="14" fill="#0BD6EE" letter-spacing="3.4" font-weight="600">RULES OF THE FORGE</text>
+      <rect x="50" y="60" width="238" height="1" fill="#282047"/>
+    </g>
+
+    <g class="mn" font-size="15">
+      <g class="row" style="animation-delay:0s">
+        <text x="50" y="106" font-size="11" fill="#7B3FF2">01</text>
+        <text x="88" y="106" fill="#8078A8">if it repeats,</text>
+        <g class="arw" transform="translate(296,101)"><use href="#arrow"/></g>
+        <text x="336" y="106" fill="#F2EFFF" font-weight="600">automate it</text>
+      </g>
+      <g class="row" style="animation-delay:.45s">
+        <text x="50" y="144" font-size="11" fill="#7B3FF2">02</text>
+        <text x="88" y="144" fill="#8078A8">if it fails,</text>
+        <g class="arw" transform="translate(296,139)" style="animation-delay:.45s"><use href="#arrow"/></g>
+        <text x="336" y="144" fill="#F2EFFF" font-weight="600">record it</text>
+      </g>
+      <g class="row" style="animation-delay:.9s">
+        <text x="50" y="182" font-size="11" fill="#7B3FF2">03</text>
+        <text x="88" y="182" fill="#8078A8">if it ships,</text>
+        <g class="arw" transform="translate(296,177)" style="animation-delay:.9s"><use href="#arrow"/></g>
+        <text x="336" y="182" fill="#F2EFFF" font-weight="600">test it</text>
+      </g>
+      <g class="row" style="animation-delay:1.35s">
+        <text x="50" y="220" font-size="11" fill="#7B3FF2">04</text>
+        <text x="88" y="220" fill="#8078A8">if it hurts twice,</text>
+        <g class="arw" transform="translate(296,215)" style="animation-delay:1.35s"><use href="#arrow"/></g>
+        <text x="336" y="220" fill="#F2EFFF" font-weight="600">build a tool</text>
+      </g>
+    </g>
+
+    <!-- light sweeping down the list -->
+    <g class="sweep">
+      <rect x="34" y="0" width="600" height="2" fill="url(#sweepFade)"/>
+      <rect x="34" y="-9" width="600" height="20" fill="url(#sweepFade)" opacity=".22"/>
+    </g>
+
+    <rect x="0.5" y="0.5" width="899" height="249" rx="8" fill="none" stroke="#282047"/>
+  </g>
+</svg>
