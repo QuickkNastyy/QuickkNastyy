@@ -53,7 +53,7 @@
 
 <div align="center">
 
-<a href="https://github.com/QuickkNastyy?tab=repositories"><img src="./assets/stats.svg" alt="101 contributions, 97 commits, 11 repositories, 7 stars earned" width="100%" /></a>
+<a href="https://github.com/QuickkNastyy?tab=repositories"><img src="./assets/stats.svg" alt="GitHub profile stats for the last 12 months" width="100%" /></a>
 
 <br />
 
