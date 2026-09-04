@@ -13,6 +13,15 @@ const token = process.env.STATS_TOKEN || process.env.GITHUB_TOKEN;
 if (!token) throw new Error('no token: set STATS_TOKEN or GITHUB_TOKEN');
 const scoped = Boolean(process.env.STATS_TOKEN);
 
+// GITHUB_TOKEN can only see public activity, so it reports far lower figures
+// than a scoped PAT. Writing those would quietly downgrade a correct card.
+// Leave the last good numbers in place instead.
+if (!scoped) {
+  console.log('STATS_TOKEN not set — skipping. A public-only token would lower');
+  console.log('the figures rather than refresh them, so the card is left alone.');
+  process.exit(0);
+}
+
 const api = async (url, init = {}) => {
   const res = await fetch(url, {
     ...init,
